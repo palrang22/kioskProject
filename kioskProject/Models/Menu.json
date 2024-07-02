@@ -1,0 +1,352 @@
+{
+  "menus": [
+    {
+      "name": "연잎 오리구이",
+      "price": "7700",
+      "image": "https://www.hsd.co.kr/images/0a3e084fe0884808902f285468bade4b20240628021853.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "열무 감초고추장 비빔밥",
+      "price": "4900",
+      "image": "https://www.hsd.co.kr/images/540b2cea6a5f47d0b95c46ae1d018bef20240628020833.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "열무 두부강된장 비빔밥",
+      "price": "5200",
+      "image": "https://www.hsd.co.kr/images/42ecd92379324ac097aeeaffaa3fc97020240628020557.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "열무 비빔면",
+      "price": "3900",
+      "image": "https://www.hsd.co.kr/images/bd311d2a497141ef975b3a0344b5534e20240628020053.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "마라치킨 덮밥",
+      "price": "4900",
+      "image": "https://www.hsd.co.kr/images/877a2013280a486799480d002799227820240531033740.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "마라치킨 볶음면",
+      "price": "4900",
+      "image": "https://www.hsd.co.kr/images/c4fb614cfdd4404494d1fe39766dc47920240531034205.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "믹스후라이",
+      "price": "6000",
+      "image": "https://www.hsd.co.kr/images/05d193cf20d04b09adca1302c3691d6b20240531034409.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "김피탕",
+      "price": "5500",
+      "image": "https://www.hsd.co.kr/images/b18208ddb5bc42b5a9ef257dea83def020240617044821.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "빅김피탕",
+      "price": "7900",
+      "image": "https://www.hsd.co.kr/images/b75c20df60084c66a94d7f80ecf5cf2f20240617091652.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "이남장 설렁탕",
+      "price": "7900",
+      "image": "https://www.hsd.co.kr/images/81941b3e5dd2424792e0a14d2e165ceb20240301044944.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "사골 조랭이떡 만둣국",
+      "price": "5900",
+      "image": "https://www.hsd.co.kr/images/160d8fc2a241481f93b7e6079e498d1320240131083824.jpg",
+      "category": "newMenu"
+    },
+    {
+      "name": "송정식 떡갈비 Ⅱ",
+      "price": "6900",
+      "image": "https://www.hsd.co.kr/images/53a22db481f843b09e57ff4e1e341acd20240628022235.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "제육돈까스 도련님",
+      "price": "4900",
+      "image": "https://www.hsd.co.kr/images/e03facdfbd4040c6aacffc849d50031820240531034629.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "카츠카츠",
+      "price": "4900",
+      "image": "https://www.hsd.co.kr/images/6beab35cb9f74576b13289da6813ded120240617094336.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "숯불직화구이",
+      "price": "6800",
+      "image": "https://www.hsd.co.kr/images/c89fce2b5011488daebb8df1d895180420240617093453.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "소불고기",
+      "price": "5700",
+      "image": "https://www.hsd.co.kr/images/cca756b8e03e416bb8ed057af48b700e20240617093423.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "메가치킨제육",
+      "price": "7800",
+      "image": "https://www.hsd.co.kr/images/01d9d00f165f47a9bbfda0ab11c8ca7820240617093323.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "칠리 찹쌀탕수육도련님",
+      "price": "4500",
+      "image": "https://www.hsd.co.kr/images/12d8ce7d6db64758af173dda3bbc3f2520240617094313.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "동백",
+      "price": "6200",
+      "image": "https://www.hsd.co.kr/images/e427f886f65842c08fe78054912b8cba20240628022145.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "치킨제육",
+      "price": "5000",
+      "image": "https://www.hsd.co.kr/images/1393152407f2466cb66d32f2c981eea520240617094248.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "돈까스도련님",
+      "price": "4900",
+      "image": "https://www.hsd.co.kr/images/ed06838fdd6344ffb60c0a954addb9ea20240617092727.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "제육볶음",
+      "price": "4700",
+      "image": "https://www.hsd.co.kr/images/aba6eff5bd49468dbcc3c8b5cec8f00c20240617094208.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "돈치스팸",
+      "price": "5000",
+      "image": "https://www.hsd.co.kr/images/aecd949bd47043b0b54ec13d4cb132d820240617092955.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "송정식 떡갈비",
+      "price": "6900",
+      "image": "https://www.hsd.co.kr/images/263707a278884c8fa573a3a66895072720240628022214.jpg",
+      "category": "squareMenu"
+    },
+    {
+      "name": "메가스팸마요",
+      "price": "5900",
+      "image": "https://www.hsd.co.kr/images/19a2b65f6a464757bc36404b4edb3a5820220127075626.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "스팸마요",
+      "price": "4000",
+      "image": "https://www.hsd.co.kr/images/4d82aaca2c954a498786dba8d8b7097920220127075646.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "메가치킨마요",
+      "price": "6200",
+      "image": "https://www.hsd.co.kr/images/7dfad1e4006b4ee584c707dd45c1984620220127081219.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "왕치킨마요",
+      "price": "5100",
+      "image": "https://www.hsd.co.kr/images/63ecc71201424b139caf40986028f91f20220127081244.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "빅치킨마요",
+      "price": "4400",
+      "image": "https://www.hsd.co.kr/images/3182c01777d04bdeb96abd9423c92fc520220127081319.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "치킨마요",
+      "price": "3800",
+      "image": "https://www.hsd.co.kr/images/e36c04b219ff41ad82f32208585e41cf20220127081455.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "참치마요",
+      "price": "3600",
+      "image": "https://www.hsd.co.kr/images/40f8e1985f804226bf7c7cc783ae091420220324025555.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "돈치마요",
+      "price": "4100",
+      "image": "https://www.hsd.co.kr/images/5c4f2b38d4a041b49cf57b7163793fa320230901110710.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "스페셜 하이라이스",
+      "price": "5900",
+      "image": "https://www.hsd.co.kr/images/8ff9a091ae9048a8a2bd752be44638a520240617092105.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "핫 치즈 닭갈비덮밥",
+      "price": "6100",
+      "image": "https://www.hsd.co.kr/images/57e28668bc0c45d5bd4ad4e25c6a0a8120240430024936.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "오리지널 치즈 닭갈비덮밥",
+      "price": "6100",
+      "image": "https://www.hsd.co.kr/images/614b95fca5ba4f358c55758cde284ffa20240430024838.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "숯불직화구이 덮밥",
+      "price": "6000",
+      "image": "https://www.hsd.co.kr/images/d8058496ecfc48c3992f314fe63a4e1c20230901111026.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "마파두부 덮밥",
+      "price": "5000",
+      "image": "https://www.hsd.co.kr/images/9b9cef1c01aa4f77ac40b054151ada0b20211028045751.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "왕카레돈까스덮밥",
+      "price": "6100",
+      "image": "https://www.hsd.co.kr/images/26b4e1283d8f4ef887150442999b9b7f20211118024337.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "새우돈까스 덮밥",
+      "price": "4400",
+      "image": "https://www.hsd.co.kr/images/15524c8c4fbd444cb18d9ce5a6ac8d6220230901110829.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "돈까스 덮밥",
+      "price": "4300",
+      "image": "https://www.hsd.co.kr/images/e991ff7ce6d6411fb5c7ca363fc2ffd020211118024204.jpg",
+      "category": "bowlMenu"
+    },
+    {
+      "name": "반찬 묵은지김치찌개",
+      "price": "4400",
+      "image": "https://www.hsd.co.kr/images/e179d0d8f03645648ae3b0d2162c088120190109110329.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 카레",
+      "price": "2900",
+      "image": "https://www.hsd.co.kr/images/07c7b9661803458bbc43c22fe1b6196e20180320024429.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 순살 고등어 간장구이",
+      "price": "3900",
+      "image": "https://www.hsd.co.kr/images/947ead456efb46abab68f3c547f0c6a020210521044504.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 김치 부대찌개",
+      "price": "4900",
+      "image": "https://www.hsd.co.kr/images/85acc4bde4c04c10af6afeb4059abd3e20211129051759.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 치킨",
+      "price": "3800",
+      "image": "https://www.hsd.co.kr/images/51d992e9949e41dcb96269fc4deaf69020220127074301.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 고기고기",
+      "price": "3600",
+      "image": "https://www.hsd.co.kr/images/02a15eaf142a422eaf7e47d63f06878e20210521044427.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 돈까스도련님",
+      "price": "4100",
+      "image": "https://www.hsd.co.kr/images/5f9b7273ad1f4c1095e8e07a5fc5368820220127074335.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 제육볶음",
+      "price": "3500",
+      "image": "https://www.hsd.co.kr/images/75bee41a9b9847838a924f70ba3262fb20210521044411.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 토네이도 소세지",
+      "price": "3200",
+      "image": "https://www.hsd.co.kr/images/6e48dd60e0904e30b0ce70445c5e73db20210531055314.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "반찬 돈까스",
+      "price": "2900",
+      "image": "https://www.hsd.co.kr/images/3ae72358f95f4c3e960200ad57661ae220220127074405.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "3종 미니반찬B",
+      "price": "1300",
+      "image": "https://www.hsd.co.kr/images/1db5ba29e9ee4107875eeaf2cf46f17820230313064512.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "3종 미니반찬A",
+      "price": "1300",
+      "image": "https://www.hsd.co.kr/images/2eb1c7741ab44b7280519baf601d3fef20230313064313.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "오징어젓갈",
+      "price": "600",
+      "image": "https://www.hsd.co.kr/images/d5bb9285b5c440e48906d48f612b896c20200818042401.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "한솥 두부강된장소스",
+      "price": "1800",
+      "image": "https://www.hsd.co.kr/images/9fefee4867974aa0be3b8e73d957ac3320190709113524.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "한솥 감초볶음고추장소스",
+      "price": "500",
+      "image": "https://www.hsd.co.kr/images/b2d2ba7c9a9445f986277a5734608d5b20190709112130.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "볶음김치",
+      "price": "500",
+      "image": "https://www.hsd.co.kr/images/c7e4e668d8fc4ca5adb03aa3e179930720200818042913.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "김치",
+      "price": "400",
+      "image": "https://www.hsd.co.kr/images/d9d0d5d27a114593bc739e38179c021820200818042649.jpg",
+      "category": "sideMenu"
+    },
+    {
+      "name": "무말랭이 무침",
+      "price": "500",
+      "image": "https://www.hsd.co.kr/images/861c59482cd543dd83f1590449a2bca920220824114129.jpg",
+      "category": "sideMenu"
+    }
+  ]
+}
