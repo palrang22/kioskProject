@@ -9,21 +9,19 @@
 /* Begin PBXBuildFile section */
 		E73236222C339E85004B0961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73236212C339E85004B0961 /* AppDelegate.swift */; };
 		E73236242C339E85004B0961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73236232C339E85004B0961 /* SceneDelegate.swift */; };
-		E73236262C339E85004B0961 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73236252C339E85004B0961 /* ViewController.swift */; };
-		E73236292C339E85004B0961 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E73236282C339E85004B0961 /* Base */; };
 		E732362B2C339E88004B0961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E732362A2C339E88004B0961 /* Assets.xcassets */; };
 		E732362E2C339E88004B0961 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E732362D2C339E88004B0961 /* Base */; };
+		E73236362C339F12004B0961 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73236352C339F12004B0961 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E732361E2C339E85004B0961 /* kioskProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kioskProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73236212C339E85004B0961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E73236232C339E85004B0961 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E73236252C339E85004B0961 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E73236282C339E85004B0961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E732362A2C339E88004B0961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E732362D2C339E88004B0961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E732362F2C339E88004B0961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E73236352C339F12004B0961 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +56,9 @@
 			children = (
 				E73236212C339E85004B0961 /* AppDelegate.swift */,
 				E73236232C339E85004B0961 /* SceneDelegate.swift */,
-				E73236252C339E85004B0961 /* ViewController.swift */,
-				E73236272C339E85004B0961 /* Main.storyboard */,
 				E732362A2C339E88004B0961 /* Assets.xcassets */,
 				E732362C2C339E88004B0961 /* LaunchScreen.storyboard */,
+				E73236352C339F12004B0961 /* MainViewController.swift */,
 				E732362F2C339E88004B0961 /* Info.plist */,
 			);
 			path = kioskProject;
@@ -127,7 +124,6 @@
 			files = (
 				E732362B2C339E88004B0961 /* Assets.xcassets in Resources */,
 				E732362E2C339E88004B0961 /* Base in Resources */,
-				E73236292C339E85004B0961 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73236262C339E85004B0961 /* ViewController.swift in Sources */,
+				E73236362C339F12004B0961 /* MainViewController.swift in Sources */,
 				E73236222C339E85004B0961 /* AppDelegate.swift in Sources */,
 				E73236242C339E85004B0961 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E73236272C339E85004B0961 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E73236282C339E85004B0961 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E732362C2C339E88004B0961 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +285,6 @@
 				INFOPLIST_FILE = kioskProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,9 +294,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.4wh.kioskProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,7 +315,6 @@
 				INFOPLIST_FILE = kioskProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -335,9 +324,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.4wh.kioskProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
