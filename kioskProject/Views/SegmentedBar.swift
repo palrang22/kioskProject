@@ -5,7 +5,8 @@
 //  Created by 김승희 on 7/2/24.
 //
 
-import Foundation
+// 가혜님
+
 import UIKit
 
 class SegmentedBar: UIView {

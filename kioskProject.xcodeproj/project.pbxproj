@@ -13,12 +13,13 @@
 		E732362E2C339E88004B0961 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E732362D2C339E88004B0961 /* Base */; };
 		E73236362C339F12004B0961 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73236352C339F12004B0961 /* MainViewController.swift */; };
 		E732363C2C34201E004B0961 /* MenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732363B2C34201E004B0961 /* MenuCollectionView.swift */; };
-		E732363E2C342028004B0961 /* CartCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732363D2C342028004B0961 /* CartCollectionView.swift */; };
+		E732363E2C342028004B0961 /* CartTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732363D2C342028004B0961 /* CartTableView.swift */; };
 		E73236402C342033004B0961 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732363F2C342033004B0961 /* MenuCollectionViewCell.swift */; };
 		E73236422C34203D004B0961 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73236412C34203D004B0961 /* CartCollectionViewCell.swift */; };
 		E73236442C342061004B0961 /* Menu.json in Resources */ = {isa = PBXBuildFile; fileRef = E73236432C342061004B0961 /* Menu.json */; };
 		E73236492C3420F0004B0961 /* SegmentedBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73236482C3420F0004B0961 /* SegmentedBar.swift */; };
 		E732364B2C342107004B0961 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732364A2C342107004B0961 /* MenuItem.swift */; };
+		E7B778F62C34DC0E00F75C89 /* MenuDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B778F52C34DC0E00F75C89 /* MenuDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +31,13 @@
 		E732362F2C339E88004B0961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E73236352C339F12004B0961 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E732363B2C34201E004B0961 /* MenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionView.swift; sourceTree = "<group>"; };
-		E732363D2C342028004B0961 /* CartCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionView.swift; sourceTree = "<group>"; };
+		E732363D2C342028004B0961 /* CartTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableView.swift; sourceTree = "<group>"; };
 		E732363F2C342033004B0961 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		E73236412C34203D004B0961 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		E73236432C342061004B0961 /* Menu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Menu.json; sourceTree = "<group>"; };
 		E73236482C3420F0004B0961 /* SegmentedBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedBar.swift; sourceTree = "<group>"; };
 		E732364A2C342107004B0961 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		E7B778F52C34DC0E00F75C89 /* MenuDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E732364A2C342107004B0961 /* MenuItem.swift */,
+				E7B778F52C34DC0E00F75C89 /* MenuDecoder.swift */,
 				E73236432C342061004B0961 /* Menu.json */,
 			);
 			path = Models;
@@ -94,7 +97,7 @@
 			children = (
 				E732363B2C34201E004B0961 /* MenuCollectionView.swift */,
 				E732363F2C342033004B0961 /* MenuCollectionViewCell.swift */,
-				E732363D2C342028004B0961 /* CartCollectionView.swift */,
+				E732363D2C342028004B0961 /* CartTableView.swift */,
 				E73236412C34203D004B0961 /* CartCollectionViewCell.swift */,
 				E73236482C3420F0004B0961 /* SegmentedBar.swift */,
 			);
@@ -181,10 +184,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73236422C34203D004B0961 /* CartCollectionViewCell.swift in Sources */,
-				E732363E2C342028004B0961 /* CartCollectionView.swift in Sources */,
+				E732363E2C342028004B0961 /* CartTableView.swift in Sources */,
 				E73236402C342033004B0961 /* MenuCollectionViewCell.swift in Sources */,
 				E732363C2C34201E004B0961 /* MenuCollectionView.swift in Sources */,
 				E73236362C339F12004B0961 /* MainViewController.swift in Sources */,
+				E7B778F62C34DC0E00F75C89 /* MenuDecoder.swift in Sources */,
 				E73236222C339E85004B0961 /* AppDelegate.swift in Sources */,
 				E732364B2C342107004B0961 /* MenuItem.swift in Sources */,
 				E73236492C3420F0004B0961 /* SegmentedBar.swift in Sources */,

@@ -5,7 +5,8 @@
 //  Created by 김승희 on 7/2/24.
 //
 
-import Foundation
+// 승환님
+
 import UIKit
 
 class MenuCollectionView: UIView {

@@ -8,5 +8,8 @@
 import Foundation
 
 struct MenuItem: Codable {
-    
+    var name: String
+    var price: String
+    var image: String
+    var category: String
 }
