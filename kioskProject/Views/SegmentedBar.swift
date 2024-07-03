@@ -8,6 +8,7 @@
 // 가혜님
 
 import UIKit
+import SnapKit
 
 class SegmentedBar: UIView {
     

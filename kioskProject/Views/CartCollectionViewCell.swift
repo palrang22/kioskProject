@@ -8,7 +8,7 @@
 // 동준님
 
 import UIKit
-import SwiftUI
+import SnapKit
 
 class CartCollectionViewCell: UICollectionViewCell {
     

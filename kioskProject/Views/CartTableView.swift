@@ -8,6 +8,7 @@
 // 선호님
 
 import UIKit
+import SnapKit
 
 class CartTableView: UIView {
     

@@ -8,6 +8,7 @@
 // 승희님
 
 import UIKit
+import SnapKit
 
 class MenuCollectionViewCell: UICollectionViewCell {
     
