@@ -36,7 +36,6 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
     }()
     
     var menuData: [MenuItem] = []
-    
     func menuSetting(_ category: String) {
         if let menuDatas = menuItems {
             for i in menuDatas {
