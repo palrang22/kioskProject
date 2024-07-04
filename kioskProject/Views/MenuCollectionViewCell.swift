@@ -26,6 +26,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // image, namelabel, pricelabel 제약조건 설정
     func setupViews() {
         menuImageView.contentMode = .scaleAspectFill
         menuNameLabel.font = .boldSystemFont(ofSize: 16)
@@ -36,6 +37,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // 스택뷰 생성 및 제약조건 설정
     func setupStackViews() {
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -54,6 +56,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // configure 함수 생성 - MenuCollectionView 에서 사용
     func configure(menuName: String, price: String, image: String){
         if menuName == "" && price == "" && image == "" {
             menuNameLabel.text = ""
@@ -67,6 +70,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // string url을 image로 변환
     private func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
         
