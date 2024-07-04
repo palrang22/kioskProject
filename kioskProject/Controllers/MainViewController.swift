@@ -14,12 +14,21 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        
         let segmentedBar = SegmentedBar()
         self.view.addSubview(segmentedBar)
         segmentedBar.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            $0.height.equalTo(500)
+        }
+        
+        let cartTableView = CartTableView()
+        self.view.addSubview(cartTableView)
+        cartTableView.snp.makeConstraints{
+            $0.bottom.equalToSuperview().offset(-20)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(200)
         }
     }
 
