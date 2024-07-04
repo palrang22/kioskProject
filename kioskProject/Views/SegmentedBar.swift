@@ -16,39 +16,15 @@ class SegmentedBar: UIView {
         let category = UISegmentedControl(items: items)
         category.selectedSegmentIndex = 0
         category.backgroundColor = .white
-        category.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
         return category
     }()  // ()는 클로저를 호출하는 구문
     
-    let firstView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        return view
-    } ()
+    // MenuCollectionView 불러오기
+    let firstView = MenuCollectionView()
+    let secondView = MenuCollectionView()
+    let thirdView = MenuCollectionView()
+    let fourthView = MenuCollectionView()
     
-    let secondView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        view.isHidden = true
-        return view
-    } ()
-    
-    let thirdView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .blue
-        view.isHidden = true
-        return view
-    } ()
-    
-    let fourthView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .green
-        view.isHidden = true
-        return view
-    } ()
-    
-  
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -62,6 +38,9 @@ class SegmentedBar: UIView {
         }
         
         segmentedControl.selectedSegmentTintColor = .yellow   // 선택된 세그먼트 배경색
+        
+        // 여기에 self를 weak로 캡처
+        segmentedControl.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
         
         [firstView, secondView, thirdView, fourthView]
                     .forEach { addSubview($0) }
@@ -90,8 +69,6 @@ class SegmentedBar: UIView {
             $0.height.equalTo(400)
         }
         
-       
-
         updateSegmentedControlAppearance() // 초기 세그먼트 컨드롤 외관 업데이트
     }
     
@@ -137,4 +114,3 @@ class SegmentedBar: UIView {
             segmentedControl.setTitleTextAttributes(normalAttributes, for: .normal)
         }
 }
-
