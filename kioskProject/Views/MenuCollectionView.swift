@@ -35,12 +35,30 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         return pageControl
     }()
     
-    let data = Array(repeating: ("메뉴 이름", "가격"), count: 8)
+    var menuData: [MenuItem] = []
     
-    override init(frame: CGRect) {
+    func menuSetting(_ category: String) {
+        if let menuDatas = menuItems {
+            for i in menuDatas {
+                if i.category == category {
+                    menuData.append(i)
+                }
+            }
+        }
+    }
+    
+    init(frame: CGRect = .zero, _ category: String) {
         super.init(frame: frame)
         setupView()
-        pageControl.numberOfPages = Int(ceil(Double(data.count) / 4.0))
+        menuSetting(category)
+        updatePageControl()
+    }
+    
+    private func updatePageControl() {
+        let totalItems = menuData.count
+        let remainder = totalItems % 4
+        let numberOfItems = remainder == 0 ? totalItems : totalItems + (4 - remainder)
+        pageControl.numberOfPages = numberOfItems / 4
     }
     
     required init?(coder: NSCoder) {
@@ -56,34 +74,45 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         addSubview(collectionView)
         addSubview(pageControl)
         
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            
-            pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
-            pageControl.leadingAnchor.constraint(equalTo: leadingAnchor),
-            pageControl.trailingAnchor.constraint(equalTo: trailingAnchor),
-            pageControl.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(pageControl.snp.top).offset(-20)
+        }
+
+        pageControl.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        let totalItems = menuData.count
+        let remainder = totalItems % 4
+        return remainder == 0 ? totalItems : totalItems + (4 - remainder)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as! MenuCollectionViewCell
-        let menuData = data[indexPath.item]
-        // congigure 메소드 만들어서 name 과 priece, Image 저장할 수 있는 Lable 만들어 주세요
-        //cell.configure(menuName: menuData.0, price: menuData.1)
+        if indexPath.item < menuData.count {
+            let menuData = menuData[indexPath.item]
+            // configure 메소드 만들어서 name 과 price, Image 저장할 수 있는 Label 만들어 주세요
+            cell.configure(menuName: menuData.name, price: menuData.price, image: menuData.image)
+        } else {
+            // 빈 셀 설정
+            cell.configure(menuName: "", price: "", image: "")
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 2 - 15
-        let height = collectionView.frame.height / 2 - 15
+        let height = collectionView.frame.height / 2 - 10
+        let width = collectionView.frame.width / 2 - 10
         return CGSize(width: width, height: height)
     }
     
@@ -95,7 +124,15 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // 셀 클릭 시 작동할 함수 만들어야 함
-        print("selected \(indexPath.item) \(data[indexPath.item])")
-        print(type(of: data[indexPath.item]))
+        if menuData.count > indexPath.item {
+            print("selected \(indexPath.item) \(menuData[indexPath.item])")
+        } else {
+            print("없는 상품")
+        }
+    }
+    @objc private func pageControlTapped(_ sender: UIPageControl) {
+        let page = sender.currentPage
+        let xOffset = CGFloat(page) * collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: true)
     }
 }

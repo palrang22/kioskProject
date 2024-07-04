@@ -28,8 +28,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     func setupViews() {
         menuImageView.contentMode = .scaleAspectFill
-        menuNameLabel.font = .boldSystemFont(ofSize: 18)
-        menuPriceLabel.font = .systemFont(ofSize: 16)
+        menuNameLabel.font = .boldSystemFont(ofSize: 16)
+        menuPriceLabel.font = .systemFont(ofSize: 14)
         
         menuImageView.snp.makeConstraints {
             $0.width.height.equalTo(100)
@@ -51,14 +51,20 @@ class MenuCollectionViewCell: UICollectionViewCell {
         stackView.snp.makeConstraints {
             $0.centerX.equalTo(contentView)
             $0.centerY.equalTo(contentView)
-            
         }
     }
     
     func configure(menuName: String, price: String, image: String){
-        menuNameLabel.text = menuName
-        loadImage(from: image)
-        menuPriceLabel.text = price
+        if menuName == "" && price == "" && image == "" {
+            menuNameLabel.text = ""
+            menuPriceLabel.text = ""
+            menuImageView.backgroundColor = .white
+            menuImageView.image = nil
+        } else {
+            menuNameLabel.text = menuName
+            loadImage(from: image)
+            menuPriceLabel.text = price + "원"
+        }
     }
     
     private func loadImage(from urlString: String) {
