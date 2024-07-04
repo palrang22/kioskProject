@@ -10,7 +10,7 @@ import Foundation
 struct CartItem {
     let name: String
     let price: String
-    let quantity: Int
+    var quantity: Int
 }
 
 var cartItems: [CartItem] = []

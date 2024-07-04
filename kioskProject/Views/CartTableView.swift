@@ -10,6 +10,11 @@
 import UIKit
 import SnapKit
 
+protocol CartTableViewDelegate: AnyObject {
+    func didUpdateCartItems(_ items: [CartItem])
+}
+
+
 class CartTableView: UIView {
     var tableView = UITableView(frame: .zero, style: .plain)
     var cartItems: [CartItem] = [] {
@@ -18,13 +23,15 @@ class CartTableView: UIView {
         }
     }
     
+    weak var delegate: CartTableViewDelegate?
+    
     init() {
         super.init(frame: .zero)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CartTableViewCell.self, forCellReuseIdentifier: "CartItemCell")
         setupTableView() // 테이블뷰 설정 함수 호출
-        loadDefaultItems() // 기본 데이터 호출
+        //loadDefaultItems() // 기본 데이터 호출
     }
     
     required init?(coder: NSCoder) {
@@ -52,6 +59,16 @@ class CartTableView: UIView {
         cartItems.append(contentsOf: defaultItems)
         tableView.reloadData()
     }
+    
+//    func updateItemQuantity(at indexPath: IndexPath, quantity: Int) {
+//        cartItems[indexPath.row].quantity = quantity
+//        tableView.reloadRows(at: [indexPath], with: .none)
+//    }
+    func updateItemQuantity(at indexPath: IndexPath, quantity: Int) {
+        cartItems[indexPath.row].quantity = quantity
+        tableView.reloadRows(at: [indexPath], with: .none)
+        delegate?.didUpdateCartItems(cartItems)
+    }
 }
 
 
@@ -65,13 +82,39 @@ extension CartTableView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartItemCell", for: indexPath) as! CartTableViewCell
         let item = cartItems[indexPath.row]
         cell.configure(with: item) // 셀 구성 함수 호출
+        cell.delegate = self
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            cartItems.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .automatic) // 삭제 애니메이션 설정
+//        }
+//    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none // 삭제 기능 비활성화
+    }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            cartItems.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic) // 삭제 애니메이션 설정
+        // 아무 작업도 하지 않음 - 삭제 기능 비활성화
+    }
+}
+
+extension CartTableView: CartTableViewCellDelegate {
+    func didTapMinusButton(cell: CartTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            let currentQuantity = cartItems[indexPath.row].quantity
+            if currentQuantity > 1 {
+                updateItemQuantity(at: indexPath, quantity: currentQuantity - 1)
+            }
+        }
+    }
+    
+    func didTapPlusButton(cell: CartTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            let currentQuantity = cartItems[indexPath.row].quantity
+            updateItemQuantity(at: indexPath, quantity: currentQuantity + 1)
         }
     }
 }

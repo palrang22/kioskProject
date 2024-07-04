@@ -10,6 +10,10 @@
 import UIKit
 import SnapKit
 
+protocol CustomCollectionViewDelegate: AnyObject {
+    func didSelectMenuItem(_ item: MenuItem)
+}
+
 class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     let collectionView: UICollectionView = {
@@ -36,6 +40,8 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
     }()
     
     var menuData: [MenuItem] = []
+    weak var delegate: CustomCollectionViewDelegate?
+    
     func menuSetting(_ category: String) {
         if let menuDatas = menuItems {
             for i in menuDatas {
@@ -77,7 +83,7 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.bottom.equalTo(pageControl.snp.top).offset(-20)
+            make.bottom.equalTo(pageControl.snp.top)
         }
 
         pageControl.snp.makeConstraints { make in
@@ -122,9 +128,15 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let delegate = delegate else {
+            print("delegate is not set")
+            return
+        }
+        
         // 셀 클릭 시 작동할 함수 만들어야 함
         if menuData.count > indexPath.item {
-            print("selected \(indexPath.item) \(menuData[indexPath.item])")
+            let menu = menuData[indexPath.item]
+            delegate.didSelectMenuItem(menu)
         } else {
             print("없는 상품")
         }
