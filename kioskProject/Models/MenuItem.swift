@@ -8,10 +8,10 @@
 import Foundation
 
 struct MenuItem: Codable {
-    var name: String
-    var price: String
-    var image: String
-    var category: String
+    var name: String        // 메뉴 이름
+    var price: String       // 메뉴 가격
+    var image: String       // 메뉴 이미지
+    var category: String    // 메뉴 카테고리
 }
 
 let menuItems: [MenuItem]? = {

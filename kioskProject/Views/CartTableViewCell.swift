@@ -16,7 +16,6 @@ protocol CartTableViewCellDelegate: AnyObject {
     func didTapPlusButton(cell: CartTableViewCell)
 }
 
-
 class CartTableViewCell: UITableViewCell {
     let menuNameLabel = UILabel()
     let menuPriceLabel = UILabel()
@@ -24,6 +23,7 @@ class CartTableViewCell: UITableViewCell {
     let minusButton = UIButton()
     let plusButton = UIButton()
     
+    // 테이블 뷰에서 사용하기 위한 델리게이트 생성
     weak var delegate: CartTableViewCellDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -61,6 +61,7 @@ class CartTableViewCell: UITableViewCell {
         }
     }
     
+    // 버튼 세팅
     private func setupButtons() {
         minusButton.setTitle("-", for: .normal)
         plusButton.setTitle("+", for: .normal)

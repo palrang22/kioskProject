@@ -10,12 +10,13 @@
 import UIKit
 import SnapKit
 
+// MainViewController 에서 사용하기 위한 Delegate 생성
 protocol CustomCollectionViewDelegate: AnyObject {
     func didSelectMenuItem(_ item: MenuItem)
 }
 
 class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+    // 컬렉션 뷰 생성
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -28,7 +29,7 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-    
+    // 페이징 처리를 위한 컨트롤 객체 생성
     let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
@@ -39,9 +40,12 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         return pageControl
     }()
     
+    // 메뉴 데이터를 저장할 배열 생성
     var menuData: [MenuItem] = []
+    // 데이터 사용을 위한 delegate 생성
     weak var delegate: CustomCollectionViewDelegate?
     
+    // 메뉴 리스트에 메뉴 추가
     func menuSetting(_ category: String) {
         if let menuDatas = menuItems {
             for i in menuDatas {
@@ -102,6 +106,7 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         return remainder == 0 ? totalItems : totalItems + (4 - remainder)
     }
     
+    // menuCell 을 만듦
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuCollectionViewCell", for: indexPath) as! MenuCollectionViewCell
         if indexPath.item < menuData.count {
@@ -121,12 +126,14 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: width, height: height)
     }
     
+    // 페이징 처리
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.width
         let currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
         pageControl.currentPage = currentPage
     }
     
+    // 셀 클릭시 작동할 함수
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let delegate = delegate else {
             print("delegate is not set")
@@ -141,6 +148,8 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
             print("없는 상품")
         }
     }
+    
+    // 페이지 컨트롤 클릭시 이동
     @objc private func pageControlTapped(_ sender: UIPageControl) {
         let page = sender.currentPage
         let xOffset = CGFloat(page) * collectionView.frame.width

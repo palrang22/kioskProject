@@ -36,7 +36,7 @@ class SegmentedBar: UIView {
         addSubview(segmentedControl)
         
         segmentedControl.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(70)
+            $0.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(10)
             $0.centerX.equalToSuperview()
             $0.width.equalToSuperview().multipliedBy(0.9)
         }
@@ -52,25 +52,25 @@ class SegmentedBar: UIView {
         firstView.snp.makeConstraints {
             $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(400)
+            $0.height.equalTo(350)
         }
         
         secondView.snp.makeConstraints {
             $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(400)
+            $0.height.equalTo(350)
         }
         
         thirdView.snp.makeConstraints {
             $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(400)
+            $0.height.equalTo(350)
         }
         
         fourthView.snp.makeConstraints {
             $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(400)
+            $0.height.equalTo(350)
         }
         segmentChanged(segmentedControl)
         updateSegmentedControlAppearance() // 초기 세그먼트 컨드롤 외관 업데이트

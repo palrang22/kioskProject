@@ -10,6 +10,7 @@
 import UIKit
 import SnapKit
 
+// MainViewController 에서 사용하기 위한 Delegate 생성
 protocol CartTableViewDelegate: AnyObject {
     func didUpdateCartItems(_ items: [CartItem])
 }
@@ -23,6 +24,7 @@ class CartTableView: UIView {
         }
     }
     
+    // 데이터를 사용하기 위한 델리게이터 생성
     weak var delegate: CartTableViewDelegate?
     
     init() {
@@ -64,6 +66,7 @@ class CartTableView: UIView {
 //        cartItems[indexPath.row].quantity = quantity
 //        tableView.reloadRows(at: [indexPath], with: .none)
 //    }
+    // 메뉴 갯수를 업데이트
     func updateItemQuantity(at indexPath: IndexPath, quantity: Int) {
         cartItems[indexPath.row].quantity = quantity
         tableView.reloadRows(at: [indexPath], with: .none)
@@ -102,6 +105,7 @@ extension CartTableView: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension CartTableView: CartTableViewCellDelegate {
+    // 마이너스 버튼 클릭 시 작동
     func didTapMinusButton(cell: CartTableViewCell) {
         if let indexPath = tableView.indexPath(for: cell) {
             let currentQuantity = cartItems[indexPath.row].quantity
@@ -110,7 +114,7 @@ extension CartTableView: CartTableViewCellDelegate {
             }
         }
     }
-    
+    // 플러스 버튼 클릭 시 작동
     func didTapPlusButton(cell: CartTableViewCell) {
         if let indexPath = tableView.indexPath(for: cell) {
             let currentQuantity = cartItems[indexPath.row].quantity
