@@ -21,6 +21,7 @@
 		E732364B2C342107004B0961 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732364A2C342107004B0961 /* MenuItem.swift */; };
 		E7B778F62C34DC0E00F75C89 /* MenuDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B778F52C34DC0E00F75C89 /* MenuDecoder.swift */; };
 		E7B778F92C34E44D00F75C89 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E7B778F82C34E44D00F75C89 /* SnapKit */; };
+		E7B7791B2C3674E100F75C89 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B7791A2C3674E100F75C89 /* CartItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		E73236482C3420F0004B0961 /* SegmentedBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedBar.swift; sourceTree = "<group>"; };
 		E732364A2C342107004B0961 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		E7B778F52C34DC0E00F75C89 /* MenuDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDecoder.swift; sourceTree = "<group>"; };
+		E7B7791A2C3674E100F75C89 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				E732364A2C342107004B0961 /* MenuItem.swift */,
 				E7B778F52C34DC0E00F75C89 /* MenuDecoder.swift */,
 				E73236432C342061004B0961 /* Menu.json */,
+				E7B7791A2C3674E100F75C89 /* CartItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				E73236422C34203D004B0961 /* CartCollectionViewCell.swift in Sources */,
 				E732363E2C342028004B0961 /* CartTableView.swift in Sources */,
+				E7B7791B2C3674E100F75C89 /* CartItem.swift in Sources */,
 				E73236402C342033004B0961 /* MenuCollectionViewCell.swift in Sources */,
 				E732363C2C34201E004B0961 /* MenuCollectionView.swift in Sources */,
 				E73236362C339F12004B0961 /* MainViewController.swift in Sources */,

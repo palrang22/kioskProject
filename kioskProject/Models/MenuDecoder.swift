@@ -26,12 +26,3 @@ func decodeMenuItems(from data: Data) -> [MenuItem]? {
         return nil
     }
 }
-
-// MenuItems 배열을 전역적으로 사용할 수 있도록 선언
-// menuItems 변수를 언래핑하여 사용
-let menuItems: [MenuItem]? = {
-    if let data = loadJsonData(filename: "Menu") {
-        return decodeMenuItems(from: data)
-    }
-    return nil
-}()

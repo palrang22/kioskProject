@@ -13,3 +13,10 @@ struct MenuItem: Codable {
     var image: String
     var category: String
 }
+
+let menuItems: [MenuItem]? = {
+    if let data = loadJsonData(filename: "Menu") {
+        return decodeMenuItems(from: data)
+    }
+    return nil
+}()
