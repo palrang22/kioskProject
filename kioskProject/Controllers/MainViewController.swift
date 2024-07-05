@@ -32,7 +32,7 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.equalToSuperview().offset(100)
             make.trailing.equalToSuperview().offset(-100)
-            make.height.equalTo(30)
+            make.height.equalTo(40)
         }
         
         // 세그먼트 바 구역
@@ -40,7 +40,7 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         segmentedBar.snp.makeConstraints {
             $0.top.equalTo(logoImage.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(10)
-            $0.height.equalTo(400)
+            $0.height.equalTo(450)
         }
         
         // 금액, 갯수 레이블 구역
@@ -51,7 +51,7 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         cartTableView.snp.makeConstraints{
             $0.top.equalTo(totalCount.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(30)
-            $0.height.equalTo(200)
+            $0.height.equalTo(150)
         }
         
         // 버튼 구역
@@ -89,7 +89,7 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         }
         
         totalAmount.snp.makeConstraints { make in
-            make.top.equalTo(segmentedBar.snp.bottom).offset(20)
+            make.centerY.equalTo(totalCount)
             make.trailing.equalToSuperview().inset(30)
             make.height.equalTo(20)
         }
@@ -98,11 +98,11 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
     // 버튼 세팅
     func buttonSetting() {
         removeAllButton.setTitle("전체삭제", for: .normal)
-        removeAllButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
-        removeAllButton.backgroundColor = UIColor(red: 218/255, green: 33/255, blue: 39/255, alpha: 1.0)
+        removeAllButton.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        removeAllButton.backgroundColor = UIColor(red: 218/255, green: 33/255, blue: 39/255, alpha: 1)
         removeAllButton.layer.cornerRadius = 10
         calculateButton.setTitle("계산하기", for: .normal)
-        calculateButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
+        calculateButton.titleLabel?.font = .boldSystemFont(ofSize: 15)
         calculateButton.backgroundColor = UIColor(red: 253/255, green: 175/255, blue: 23/255, alpha: 1.0)
         calculateButton.layer.cornerRadius = 10
         removeAllButton.translatesAutoresizingMaskIntoConstraints = false
@@ -118,14 +118,14 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
             make.top.equalTo(cartTableView.snp.bottom).offset(20)
             make.leading.equalTo(cartTableView)
             make.width.equalTo(100)
-            make.height.equalTo(45)
+            make.height.equalTo(40)
         }
         
         calculateButton.snp.makeConstraints { make in
             make.top.equalTo(cartTableView.snp.bottom).offset(20)
             make.trailing.equalTo(cartTableView)
             make.width.equalTo(100)
-            make.height.equalTo(45)
+            make.height.equalTo(40)
         }
         
     }
@@ -169,6 +169,13 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
     
     // 계산 버튼 클릭시 작동할 Alert 창
     @objc func calculateAlert() {
+        
+        // 장바구니에 아무것도 담겨있지 않을 경우 오류메세지 출력
+        if cartTableView.cartItems.isEmpty {
+            showEmptyCartAlert()
+            return
+        }
+        
         let alert = UIAlertController(title: "결제하기", message: "정말로 결제하시겠습니까?", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "결제", style: .default) { _ in
@@ -206,6 +213,14 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // 장바구니 비었는데 결제버튼 클릭시 보여줄 Alert 창
+    func showEmptyCartAlert() {
+        let alert = UIAlertController(title: "오류", message: "장바구니가 비었습니다. 메뉴를 담아보세요!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
     
