@@ -50,10 +50,10 @@ class CartTableViewCell: UITableViewCell {
         
         // 각 요소(레이블, 버튼)의 크기를 설정하기 위한 제약조건 설정
         menuNameLabel.snp.makeConstraints { make in
-            make.width.equalTo(140)
+            make.width.equalTo(160)
         }
         menuPriceLabel.snp.makeConstraints { make in
-            make.width.equalTo(80)
+            make.width.equalTo(70)
         }
         menuQuantityLabel.snp.makeConstraints { make in
             make.width.equalTo(20)
@@ -65,6 +65,13 @@ class CartTableViewCell: UITableViewCell {
             make.width.equalTo(20)
         }
         
+        // 각 요소의 텍스트 크기 조절
+        menuNameLabel.font = UIFont.systemFont(ofSize: 15)
+        menuPriceLabel.font = UIFont.systemFont(ofSize: 15)
+        menuQuantityLabel.font = UIFont.systemFont(ofSize: 15)
+        minusButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        plusButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        
         // 각 라벨의 텍스트 정렬 설정
         menuQuantityLabel.textAlignment = .center
         
@@ -73,7 +80,7 @@ class CartTableViewCell: UITableViewCell {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill
-        stackView.spacing = 8
+        stackView.spacing = 9
         
         contentView.addSubview(stackView)
         

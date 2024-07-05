@@ -69,8 +69,13 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
     
     // 레이블 세팅
     func labelSetting() {
-        totalCount.text = "총 주문내역 0개"
-        totalAmount.text = "총 금액 ₩0"
+        totalCount.text = "총 주문내역 0 개"
+        totalAmount.text = "총 금액 ₩ 0"
+        
+        // 폰트 설정
+        totalCount.font = UIFont.boldSystemFont(ofSize: 16)
+        totalAmount.font = UIFont.boldSystemFont(ofSize: 16)
+     
         totalCount.translatesAutoresizingMaskIntoConstraints = false
         totalAmount.translatesAutoresizingMaskIntoConstraints = false
         
@@ -98,7 +103,7 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         removeAllButton.layer.cornerRadius = 10
         calculateButton.setTitle("계산하기", for: .normal)
         calculateButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
-        calculateButton.backgroundColor = UIColor(red: 243/255, green: 101/255, blue: 36/255, alpha: 1.0)
+        calculateButton.backgroundColor = UIColor(red: 253/255, green: 175/255, blue: 23/255, alpha: 1.0)
         calculateButton.layer.cornerRadius = 10
         removeAllButton.translatesAutoresizingMaskIntoConstraints = false
         calculateButton.translatesAutoresizingMaskIntoConstraints = false
@@ -153,8 +158,8 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
             }
             count += i.quantity
         }
-        totalCount.text = "총 주문내역 \(count)개"
-        totalAmount.text = "총 금액 ₩\(amount)"
+        totalCount.text = "총 주문내역 \(count) 개"
+        totalAmount.text = "총 금액 ₩ \(amount)"
     }
     
     // CartTableViewDelegate 메서드 구현
