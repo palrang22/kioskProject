@@ -51,27 +51,27 @@ class SegmentedBar: UIView {
             .forEach { addSubview($0) }
         
         firstView.snp.makeConstraints {
-            $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
+            $0.top.equalTo(segmentedControl.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(350)
+            $0.height.equalTo(420)
         }
         
         secondView.snp.makeConstraints {
-            $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
+            $0.top.equalTo(segmentedControl.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(350)
+            $0.height.equalTo(420)
         }
         
         thirdView.snp.makeConstraints {
-            $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
+            $0.top.equalTo(segmentedControl.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(350)
+            $0.height.equalTo(420)
         }
         
         fourthView.snp.makeConstraints {
-            $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
+            $0.top.equalTo(segmentedControl.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(350)
+            $0.height.equalTo(420)
         }
         segmentChanged(segmentedControl)
         updateSegmentedControlAppearance() // 초기 세그먼트 컨드롤 외관 업데이트

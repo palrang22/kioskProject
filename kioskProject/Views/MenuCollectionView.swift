@@ -20,13 +20,14 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 1 // 0으로 하면 셀 넘길때 셀이 가끔 사라져서 1로 수정
+//        layout.minimumInteritemSpacing = 10
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
+
         return collectionView
     }()
     // 페이징 처리를 위한 컨트롤 객체 생성
@@ -122,7 +123,7 @@ class MenuCollectionView: UIView, UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height / 2 - 10
-        let width = collectionView.frame.width / 2 - 10
+        let width = (collectionView.frame.width - 1) / 2
         return CGSize(width: width, height: height)
     }
     

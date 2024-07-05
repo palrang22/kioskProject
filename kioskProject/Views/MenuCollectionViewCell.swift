@@ -15,6 +15,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     let menuNameLabel = UILabel()
     let menuPriceLabel = UILabel()
     let stackView = UIStackView()
+    let borderView = UIView() // 테두리 구현 위한 뷰
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,8 +29,18 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     // image, namelabel, pricelabel 제약조건 설정
     func setupViews() {
+        borderView.layer.borderColor = UIColor.lightGray.cgColor
+        borderView.layer.borderWidth = 1.0
+        borderView.layer.cornerRadius = 10
+        borderView.layer.masksToBounds = true
+        contentView.addSubview(borderView)
+        
+        borderView.snp.makeConstraints {
+            $0.edges.equalTo(contentView).inset(5)
+        }
+        
         menuImageView.contentMode = .scaleAspectFill
-        menuNameLabel.font = .boldSystemFont(ofSize: 16)
+        menuNameLabel.font = .boldSystemFont(ofSize: 15)
         menuPriceLabel.font = .systemFont(ofSize: 14)
         
         menuImageView.snp.makeConstraints {
@@ -41,8 +52,13 @@ class MenuCollectionViewCell: UICollectionViewCell {
     func setupStackViews() {
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fill
         stackView.spacing = 5
+        
+        stackView.snp.makeConstraints {
+            $0.width.equalTo(150)
+            $0.height.equalTo(150)
+        }
         
         stackView.addArrangedSubview(menuImageView)
         stackView.addArrangedSubview(menuNameLabel)
