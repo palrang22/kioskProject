@@ -13,7 +13,7 @@ import SnapKit
 class SegmentedBar: UIView {
     
     let segmentedControl: UISegmentedControl = {
-        let items = ["프리미엄", "사각도시락", "보울도시락", "추가메뉴"]
+        let items = ["신메뉴", "사각도시락", "보울도시락", "추가메뉴"]
         let category = UISegmentedControl(items: items)
         category.selectedSegmentIndex = 0
         category.backgroundColor = .white
@@ -41,7 +41,8 @@ class SegmentedBar: UIView {
             $0.width.equalToSuperview().multipliedBy(0.9)
         }
         
-        segmentedControl.selectedSegmentTintColor = .yellow  // 선택된 세그먼트 배경색
+        // 선택된 세그먼트 배경색
+        segmentedControl.selectedSegmentTintColor = UIColor(red: 253/255, green: 175/255, blue: 23/255, alpha: 1.0)
         
         // 여기에 self를 weak로 캡처
         segmentedControl.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)

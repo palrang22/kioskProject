@@ -25,8 +25,8 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         
         // 이미지 구역
         self.view.addSubview(logoImage)
-        logoImage.image = UIImage(named: "H4nsot")
-        logoImage.contentMode = .scaleToFill
+        logoImage.image = UIImage(named: "H4nsotlogo")
+        logoImage.contentMode = .scaleAspectFit
         logoImage.translatesAutoresizingMaskIntoConstraints = false
         logoImage.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
@@ -39,7 +39,7 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         self.view.addSubview(segmentedBar)
         segmentedBar.snp.makeConstraints {
             $0.top.equalTo(logoImage.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(400)
         }
         
@@ -49,8 +49,8 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         // 테이블 뷰 구역
         self.view.addSubview(cartTableView)
         cartTableView.snp.makeConstraints{
-            $0.top.equalTo(totalCount.snp.bottom).offset(5)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.top.equalTo(totalCount.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(30)
             $0.height.equalTo(200)
         }
         
@@ -79,25 +79,27 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         
         totalCount.snp.makeConstraints { make in
             make.top.equalTo(segmentedBar.snp.bottom).offset(20)
-            make.leading.equalToSuperview().offset(30)
+            make.leading.equalToSuperview().inset(30)
             make.height.equalTo(20)
         }
         
         totalAmount.snp.makeConstraints { make in
             make.top.equalTo(segmentedBar.snp.bottom).offset(20)
-            make.trailing.equalToSuperview().offset(-30)
+            make.trailing.equalToSuperview().inset(30)
             make.height.equalTo(20)
         }
     }
     
     // 버튼 세팅
     func buttonSetting() {
-        removeAllButton.setTitle("전체 삭제", for: .normal)
+        removeAllButton.setTitle("전체삭제", for: .normal)
         removeAllButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
-        removeAllButton.backgroundColor = .red
-        calculateButton.setTitle("계산 하기", for: .normal)
+        removeAllButton.backgroundColor = UIColor(red: 218/255, green: 33/255, blue: 39/255, alpha: 1.0)
+        removeAllButton.layer.cornerRadius = 10
+        calculateButton.setTitle("계산하기", for: .normal)
         calculateButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
-        calculateButton.backgroundColor = .darkGray
+        calculateButton.backgroundColor = UIColor(red: 243/255, green: 101/255, blue: 36/255, alpha: 1.0)
+        calculateButton.layer.cornerRadius = 10
         removeAllButton.translatesAutoresizingMaskIntoConstraints = false
         calculateButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -109,16 +111,16 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
         
         removeAllButton.snp.makeConstraints { make in
             make.top.equalTo(cartTableView.snp.bottom).offset(20)
-            make.leading.equalToSuperview().offset(30)
+            make.leading.equalTo(cartTableView)
             make.width.equalTo(100)
-            make.height.equalTo(50)
+            make.height.equalTo(45)
         }
         
         calculateButton.snp.makeConstraints { make in
             make.top.equalTo(cartTableView.snp.bottom).offset(20)
-            make.trailing.equalToSuperview().offset(-30)
+            make.trailing.equalTo(cartTableView)
             make.width.equalTo(100)
-            make.height.equalTo(50)
+            make.height.equalTo(45)
         }
         
     }
