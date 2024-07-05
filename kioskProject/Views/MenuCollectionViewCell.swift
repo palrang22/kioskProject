@@ -55,6 +55,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
             $0.centerY.equalTo(contentView)
         }
     }
+    // 셀 크기를 맞추기 위해 데이터가 빈값인 셀이 들어오면 안보이도록 처리
     
     // configure 함수 생성 - MenuCollectionView 에서 사용
     func configure(menuName: String, price: String, image: String){

@@ -10,6 +10,12 @@
 import UIKit
 import SnapKit
 
+// CartTableView 와 데이터를 주고밭기 위한 Delegate 생성
+protocol CartTableViewCellDelegate: AnyObject {
+    func didTapMinusButton(cell: CartTableViewCell)
+    func didTapPlusButton(cell: CartTableViewCell)
+}
+
 class CartTableViewCell: UITableViewCell {
     let menuNameLabel = UILabel()
     let menuPriceLabel = UILabel()
@@ -17,8 +23,12 @@ class CartTableViewCell: UITableViewCell {
     let minusButton = UIButton()
     let plusButton = UIButton()
     
+    // 테이블 뷰에서 사용하기 위한 델리게이트 생성
+    weak var delegate: CartTableViewCellDelegate?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupButtons()
         configureUI()
     }
     
@@ -29,7 +39,9 @@ class CartTableViewCell: UITableViewCell {
     // text 설정 함수 - CartTableView에서 사용
     func configure(with item: CartItem) {
         menuNameLabel.text = item.name
-        menuPriceLabel.text = "₩\(item.price)"
+        if let price = Int(item.price) {
+            menuPriceLabel.text = "₩\(price * item.quantity)"
+        }
         menuQuantityLabel.text = "\(item.quantity)개"
     }
     
@@ -49,6 +61,7 @@ class CartTableViewCell: UITableViewCell {
         }
     }
     
+    // 버튼 세팅
     private func setupButtons() {
         minusButton.setTitle("-", for: .normal)
         plusButton.setTitle("+", for: .normal)
@@ -56,5 +69,17 @@ class CartTableViewCell: UITableViewCell {
         plusButton.setTitleColor(.black, for: .normal)
         
         // 버튼 로직 추가예정
+        minusButton.addTarget(self, action: #selector(didTapMinusButton), for: .touchUpInside)
+        plusButton.addTarget(self, action: #selector(didTapPlusButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapMinusButton(_ sender: UIButton) {
+        // 빼기 버튼
+        delegate?.didTapMinusButton(cell: self)
+    }
+    
+    @objc func didTapPlusButton(_ sender: UIButton) {
+        // 더하기 버튼
+        delegate?.didTapPlusButton(cell: self)
     }
 }
