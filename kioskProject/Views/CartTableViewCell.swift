@@ -42,17 +42,38 @@ class CartTableViewCell: UITableViewCell {
         if let price = Int(item.price) {
             menuPriceLabel.text = "₩\(price * item.quantity)"
         }
-        menuQuantityLabel.text = "\(item.quantity)개"
+        menuQuantityLabel.text = "\(item.quantity)"
     }
     
     // StackView 생성 및 제약조건 설정
     private func configureUI() {
         
+        // 각 요소(레이블, 버튼)의 크기를 설정하기 위한 제약조건 설정
+        menuNameLabel.snp.makeConstraints { make in
+            make.width.equalTo(140)
+        }
+        menuPriceLabel.snp.makeConstraints { make in
+            make.width.equalTo(80)
+        }
+        menuQuantityLabel.snp.makeConstraints { make in
+            make.width.equalTo(20)
+        }
+        minusButton.snp.makeConstraints { make in
+            make.width.equalTo(20)
+        }
+        plusButton.snp.makeConstraints { make in
+            make.width.equalTo(20)
+        }
+        
+        // 각 라벨의 텍스트 정렬 설정
+        menuQuantityLabel.textAlignment = .center
+        
         // 만들어두신 객체 레이아웃 관리하기 편하도록 stackView에 담았습니다. 스택뷰 관련해서는 계산기 과제 Level 2를 확인해 보세요!
-        let stackView = UIStackView(arrangedSubviews: [menuNameLabel, menuPriceLabel, menuQuantityLabel, minusButton, plusButton])
+        let stackView = UIStackView(arrangedSubviews: [menuNameLabel, menuPriceLabel, minusButton, menuQuantityLabel, plusButton])
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fill
+        stackView.spacing = 8
         
         contentView.addSubview(stackView)
         
