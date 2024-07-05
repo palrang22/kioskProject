@@ -49,9 +49,11 @@ class CartTableViewCell: UITableViewCell {
     private func configureUI() {
         
         // 각 요소(레이블, 버튼)의 크기를 설정하기 위한 제약조건 설정
-        menuNameLabel.snp.makeConstraints { make in
-            make.width.equalTo(160)
-        }
+//        menuNameLabel.snp.makeConstraints { make in
+//            make.width.equalTo(160)
+//        }
+        // 남은 구역을 모두 menuNameLabel 구역으로 잡히도록 menuNameLabel 은 크기를 지정하지 않고
+        // stackView 를 .fill 속성으로 정의
         menuPriceLabel.snp.makeConstraints { make in
             make.width.equalTo(70)
         }
