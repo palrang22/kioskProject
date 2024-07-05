@@ -42,9 +42,9 @@ class CartTableView: UIView {
     
     // 테이블뷰 레이아웃
     private func setupTableView() {
-        tableView.layer.borderColor = UIColor.darkGray.cgColor
-        tableView.layer.borderWidth = 2.0
-        tableView.backgroundColor = UIColor.lightGray
+        tableView.layer.borderColor = UIColor.lightGray.cgColor
+        tableView.layer.borderWidth = 1.0
+        tableView.backgroundColor = UIColor.white
         addSubview(tableView)
         
         tableView.snp.makeConstraints{
@@ -66,6 +66,7 @@ class CartTableView: UIView {
 //        cartItems[indexPath.row].quantity = quantity
 //        tableView.reloadRows(at: [indexPath], with: .none)
 //    }
+    
     // 메뉴 갯수를 업데이트
     func updateItemQuantity(at indexPath: IndexPath, quantity: Int) {
         cartItems[indexPath.row].quantity = quantity
@@ -89,19 +90,21 @@ extension CartTableView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            cartItems.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .automatic) // 삭제 애니메이션 설정
-//        }
-//    }
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .none // 삭제 기능 비활성화
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        // 아무 작업도 하지 않음 - 삭제 기능 비활성화
-    }
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        if editingStyle == .delete {
+    //            cartItems.remove(at: indexPath.row)
+    //            tableView.deleteRows(at: [indexPath], with: .automatic) // 삭제 애니메이션 설정
+    //        }
+    //    }
+    //    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    //        return .none // 삭제 기능 비활성화
+    //    }
+    //
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        // 아무 작업도 하지 않음 - 삭제 기능 비활성화
+    //    }
+    //}
+    
 }
 
 extension CartTableView: CartTableViewCellDelegate {

@@ -42,7 +42,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
-        stackView.spacing = 10
+        stackView.spacing = 5
         
         stackView.addArrangedSubview(menuImageView)
         stackView.addArrangedSubview(menuNameLabel)
