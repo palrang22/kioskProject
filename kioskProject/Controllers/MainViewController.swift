@@ -139,12 +139,12 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
             let cartItem = CartItem(name: item.name, price: item.price, quantity: 1)
             cartTableView.cartItems.append(cartItem)
         }
-        updateLable(cartTableView.cartItems)
+        updateLabel(cartTableView.cartItems)
         cartTableView.tableView.reloadData()
     }
     
     // 레이블 정보 업데이트
-    func updateLable(_ items: [CartItem]) {
+    func updateLabel(_ items: [CartItem]) {
         var count = 0
         var amount = 0
         for i in items {
@@ -159,21 +159,21 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
     
     // CartTableViewDelegate 메서드 구현
     func didUpdateCartItems(_ items: [CartItem]) {
-        updateLable(items)
+        updateLabel(items)
     }
     
     // 계산 버튼 클릭시 작동할 Alert 창
     @objc func calculateAlert() {
         let alert = UIAlertController(title: "결제하기", message: "정말로 결제하시겠습니까?", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+        let okAction = UIAlertAction(title: "결제", style: .default) { _ in
             self.cartTableView.cartItems.removeAll()
-            self.updateLable(self.cartTableView.cartItems)
+            self.updateLabel(self.cartTableView.cartItems)
             self.cartTableView.tableView.reloadData()
             self.calculateShowCompletionAlert()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { _ in
             print("Cancel 버튼 누름")
         }
         
@@ -187,14 +187,14 @@ class MainViewController: UIViewController, CustomCollectionViewDelegate, CartTa
     @objc func removeAllAlert() {
         let alert = UIAlertController(title: "삭제하기", message: "정말로 모든 메뉴를 삭제하시겠습니까?", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+        let okAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
             self.cartTableView.cartItems.removeAll()
-            self.updateLable(self.cartTableView.cartItems)
+            self.updateLabel(self.cartTableView.cartItems)
             self.cartTableView.tableView.reloadData()
             self.deleteShowCompletionAlert()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { _ in
             print("Cancel 버튼 누름")
         }
         

@@ -114,6 +114,8 @@ extension CartTableView: CartTableViewCellDelegate {
             let currentQuantity = cartItems[indexPath.row].quantity
             if currentQuantity > 1 {
                 updateItemQuantity(at: indexPath, quantity: currentQuantity - 1)
+            } else {
+                showDeleteAlert(for: indexPath)
             }
         }
     }
@@ -123,5 +125,37 @@ extension CartTableView: CartTableViewCellDelegate {
             let currentQuantity = cartItems[indexPath.row].quantity
             updateItemQuantity(at: indexPath, quantity: currentQuantity + 1)
         }
+    }
+    
+    // 삭제 alert 및 alertaction 설정
+    func showDeleteAlert(for indexPath: IndexPath) {
+        let alert = UIAlertController(title: "삭제하기", message: "정말로 이 메뉴를 삭제하시겠습니까?", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            self.cartItems.remove(at: indexPath.row)
+            self.delegate?.didUpdateCartItems(self.cartItems)
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        // 현재 단순 UIView 상태이므로 parentViewController를 찾아주는 메서드가 있어야 alert 표시 가능
+        if let viewController = self.parentViewController {
+            viewController.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+// responder를 따라 올라가다 다음 responder가 UIViewController일 경우 반환하여 parentViewController로 지정
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while let responder = parentResponder {
+            parentResponder = responder.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
     }
 }
